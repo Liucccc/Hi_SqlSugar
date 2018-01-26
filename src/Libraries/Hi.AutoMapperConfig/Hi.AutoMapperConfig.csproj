@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{48FDF848-EDA2-4F91-922A-2A5F4FF44389}</ProjectGuid>
+    <ProjectGuid>{2CD5CDCD-F9BA-4219-86D1-EEF4EE7C64D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hi.Repositories</RootNamespace>
-    <AssemblyName>Hi.Repositories</AssemblyName>
+    <RootNamespace>Hi.AutoMapperConfig</RootNamespace>
+    <AssemblyName>Hi.AutoMapperConfig</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,12 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SqlSugar, Version=4.6.4.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\sqlSugar.4.6.4.3\lib\SqlSugar.dll</HintPath>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,13 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="DbFactory.cs" />
-    <Compile Include="GenericRepository.cs" />
-    <Compile Include="IDependency.cs" />
-    <Compile Include="IPostRepository.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="PostRepository.cs" />
+    <Compile Include="AutoMapperConfiguration.cs" />
+    <Compile Include="AutoMapperStartupTask.cs" />
+    <Compile Include="MappingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +56,10 @@
     <ProjectReference Include="..\Hi.Domain\Hi.Domain.csproj">
       <Project>{9594285c-6609-4864-8650-81b48fd8d80b}</Project>
       <Name>Hi.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hi.ViewModel\Hi.ViewModel.csproj">
+      <Project>{2f1363b5-4f14-4c6d-acdf-0ffdbc8efe74}</Project>
+      <Name>Hi.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using Hi.Repositories;
+﻿using Hi.AutoMapperConfig;
+using Hi.Repositories;
 using Hi.Services;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace Hi.Frontend.Controllers
         {
             //var postRepository = new PostRepository();
             //var post = postRepository.FindById(1);
-            var post = _postService.FindById(1);
+            var post = _postService.FindById(1).ToModel();
             ViewBag.post = post;
             return View();
         }

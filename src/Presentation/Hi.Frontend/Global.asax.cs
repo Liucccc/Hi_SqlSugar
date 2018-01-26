@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Hi.AutoMapperConfig;
 using Hi.Repositories;
 using Hi.Services;
 using System;
@@ -21,6 +22,7 @@ namespace Hi.Frontend
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacRegister();
+            AutoMapperRegister();
         }
 
         private void AutofacRegister()
@@ -31,7 +33,18 @@ namespace Hi.Frontend
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             //注册仓储层服务
-            builder.RegisterType<PostRepository>().As<IPostRepository>();
+            //builder.RegisterType<PostRepository>().As<IPostRepository>();
+
+            //注册基于接口约束的实体
+            var assembly = AppDomain.CurrentDomain.GetAssemblies();
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(
+                    t => t.GetInterfaces()
+                        .Any(i => i.IsAssignableFrom(typeof(IDependency)))
+                )
+                .AsImplementedInterfaces()
+                .InstancePerDependency();
+
             //注册服务层服务
             builder.RegisterType<PostService>().As<IPostService>();
 
@@ -42,6 +55,14 @@ namespace Hi.Frontend
 
             //设置依赖注入解析器
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+        }
+
+        /// <summary>
+        /// AutoMapper的配置初始化
+        /// </summary>
+        private void AutoMapperRegister()
+        {
+            new AutoMapperStartupTask().Execute();
         }
     }
 }

@@ -216,6 +216,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Hi.AutoMapperConfig\Hi.AutoMapperConfig.csproj">
+      <Project>{2cd5cdcd-f9ba-4219-86d1-eef4ee7c64d3}</Project>
+      <Name>Hi.AutoMapperConfig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Hi.Domain\Hi.Domain.csproj">
       <Project>{9594285c-6609-4864-8650-81b48fd8d80b}</Project>
       <Name>Hi.Domain</Name>
@@ -227,6 +231,10 @@
     <ProjectReference Include="..\..\Libraries\Hi.Services\Hi.Services.csproj">
       <Project>{6a023275-8a49-494a-ba30-8e43e9a0357a}</Project>
       <Name>Hi.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Hi.ViewModel\Hi.ViewModel.csproj">
+      <Project>{2f1363b5-4f14-4c6d-acdf-0ffdbc8efe74}</Project>
+      <Name>Hi.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
