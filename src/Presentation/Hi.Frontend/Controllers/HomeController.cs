@@ -37,6 +37,11 @@ namespace Hi.Frontend.Controllers
 
         public ActionResult admin()
         {
+            //如果未登录，则跳转到登录页面
+            if (Session["user_account"] == null)
+            {
+                return RedirectToAction("login", "account");
+            }
             //var postRepository = new PostRepository();
             //var post = postRepository.FindById(1);
             var post = _postService.FindById(1).ToModel();

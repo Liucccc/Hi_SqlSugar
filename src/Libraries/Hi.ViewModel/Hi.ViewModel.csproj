@@ -34,6 +34,7 @@
       <HintPath>..\..\..\packages\sqlSugar.4.6.4.3\lib\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,9 @@
   <ItemGroup>
     <Compile Include="PostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\LoginViewModel.cs" />
+    <Compile Include="User\RegisterViewModel.cs" />
+    <Compile Include="User\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
