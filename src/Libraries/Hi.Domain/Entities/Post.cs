@@ -10,7 +10,6 @@ namespace Hi.Domain.Entities
     /// <summary>
     /// 博文实体类
     /// </summary>
-    [SugarTable("Post")]
     public class Post
     {
         /// <summary>

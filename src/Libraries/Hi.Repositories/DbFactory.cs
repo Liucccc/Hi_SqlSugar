@@ -23,7 +23,7 @@ namespace Hi.Repositories
                 ConnectionString = Config.ConnectionString, //必填
                 DbType = DbType.SqlServer, //必填
                 IsAutoCloseConnection = true, //默认false
-                InitKeyType = InitKeyType.Attribute
+                InitKeyType = InitKeyType.SystemTable
             }); //默认SystemTable
             return db;
         }
