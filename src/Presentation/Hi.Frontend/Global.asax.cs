@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Features.ResolveAnything;
 using Autofac.Integration.Mvc;
 using Hi.AutoMapperConfig;
 using Hi.Repositories;
@@ -45,12 +46,12 @@ namespace Hi.Frontend
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
 
-            //注册服务层服务
-            builder.RegisterType<PostService>().As<IPostService>();
+            ////注册服务层服务
+            //builder.RegisterType<PostService>().As<IPostService>();
 
             //注册过滤器
             builder.RegisterFilterProvider();
-
+            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
             var container = builder.Build();
 
             //设置依赖注入解析器

@@ -11,7 +11,7 @@ namespace Hi.Repositories
     /// <summary>
     /// POST表的数据库操作类
     /// </summary>
-    public class PostRepository : GenericRepository<Post>
+    public class PostRepository : GenericRepository<Post>, IPostRepository
     {
         ///// <summary>
         ///// 根据ID查询
