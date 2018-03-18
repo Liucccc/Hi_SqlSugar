@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvertiseService.cs" />
     <Compile Include="GenericService.cs" />
+    <Compile Include="IAdvertiseService.cs" />
     <Compile Include="IPostService.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IUserService.cs" />
@@ -58,6 +60,9 @@
       <Project>{48fdf848-eda2-4f91-922a-2a5f4ff44389}</Project>
       <Name>Hi.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

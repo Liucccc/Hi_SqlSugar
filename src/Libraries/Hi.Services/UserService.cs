@@ -20,5 +20,10 @@ namespace Hi.Services
         {
             return _repository.FindByClause(x => x.LoginName == loginName);
         }
+
+        public IEnumerable<User> FindList(string loginName)
+        {
+            return _repository.FindListByClause(x => x.LoginName.Contains(loginName), "");
+        }
     }
 }

@@ -23,6 +23,10 @@ namespace Hi.Frontend.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Main()
+        {
+            return View();
+        }
 
         public ActionResult List()
         {
@@ -34,10 +38,18 @@ namespace Hi.Frontend.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult TableJson()
+        public ActionResult TableJson(string loginName)
         {
-            var post = _userService.FindAll();
-            return Json(post, JsonRequestBehavior.AllowGet);
+            if (!string.IsNullOrEmpty(loginName))
+            {
+                var user = _userService.FindList(loginName);
+                return Json(user, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var user = _userService.FindAll();
+                return Json(user, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

@@ -152,6 +152,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdvertiseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FileInputController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1603,12 +1605,28 @@
     <Content Include="Content\adminLTE\dist\js\adminlte.js" />
     <Content Include="Content\adminLTE\dist\js\adminlte.min.js" />
     <Content Include="Content\adminLTE\dist\js\demo.js" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput-rtl.css" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput-rtl.min.css" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.css" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.min.css" />
+    <Content Include="Content\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Content\bootstrap-fileinput\img\loading.gif" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer-fa\theme.css" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer-fa\theme.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer-fa\theme.min.css" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer-fa\theme.min.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer\theme.css" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer\theme.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer\theme.min.css" />
+    <Content Include="Content\bootstrap-fileinput\themes\explorer\theme.min.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\fa\theme.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\fa\theme.min.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\gly\theme.js" />
+    <Content Include="Content\bootstrap-fileinput\themes\gly\theme.min.js" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -1757,11 +1775,23 @@
     <Content Include="Areas\Admin\Views\Home\List.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Form.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Main.cshtml" />
+    <Content Include="Areas\Admin\Views\Advertise\Index.cshtml" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Areas\Admin\Views\Advertise\FileInput.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\fileinput.js" />
+    <Content Include="Scripts\fileinput.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -1770,9 +1800,69 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\locales\zh.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\plugins\piexif.js" />
+    <Content Include="Scripts\plugins\piexif.min.js" />
+    <Content Include="Scripts\plugins\purify.js" />
+    <Content Include="Scripts\plugins\purify.min.js" />
+    <Content Include="Scripts\plugins\sortable.js" />
+    <Content Include="Scripts\plugins\sortable.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="UploadFile\Advertise\20172106180.jpg" />
+    <Content Include="UploadFile\Advertise\20172122916.jpg" />
+    <Content Include="UploadFile\Advertise\20172122918.jpg" />
+    <Content Include="UploadFile\Advertise\20172123417.jpg" />
+    <Content Include="UploadFile\Advertise\20172125739.jpg" />
+    <Content Include="UploadFile\Advertise\20172125981.jpg" />
+    <Content Include="UploadFile\Advertise\20172126814.jpg" />
+    <Content Include="UploadFile\Advertise\20172126817.jpg" />
+    <Content Include="UploadFile\Advertise\20172128228.jpg" />
+    <Content Include="UploadFile\Advertise\20172128276.jpg" />
+    <Content Include="UploadFile\Advertise\20172129823.jpg" />
+    <Content Include="UploadFile\Advertise\20172131243.png" />
+    <Content Include="UploadFile\Advertise\20172148416.png" />
+    <Content Include="UploadFile\Advertise\20172151434.jpg" />
+    <Content Include="UploadFile\Advertise\20172159465.jpg" />
+    <Content Include="UploadFile\Advertise\2017282207.png" />
+    <Content Include="UploadFile\Advertise\20174241523.jpg" />
+    <Content Include="UploadFile\Advertise\20174247261.jpg" />
+    <Content Include="UploadFile\Advertise\20174247352.jpg" />
+    <Content Include="UploadFile\Advertise\20174247794.jpg" />
+    <Content Include="UploadFile\Advertise\20174248680.jpg" />
+    <Content Include="UploadFile\Advertise\2017472914.jpg" />
+    <Content Include="UploadFile\Advertise\2017479396.gif" />
+    <Content Include="UploadFile\Advertise\20177252144.jpg" />
+    <Content Include="UploadFile\Advertise\20178317730.jpg" />
+    <Content Include="UploadFile\Advertise\20178319708.jpg" />
+    <Content Include="UploadFile\Article\20172101119.png" />
+    <Content Include="UploadFile\Article\20172101119_s.png" />
+    <Content Include="UploadFile\Article\20172105439.jpg" />
+    <Content Include="UploadFile\Article\20172105439_s.jpg" />
+    <Content Include="UploadFile\Article\20172107094.png" />
+    <Content Include="UploadFile\Article\20172107094_s.png" />
+    <Content Include="UploadFile\Article\20174247811.jpg" />
+    <Content Include="UploadFile\Article\20174247811_s.jpg" />
+    <Content Include="UploadFile\Article\20174252204.jpg" />
+    <Content Include="UploadFile\Article\20174252204_s.jpg" />
+    <Content Include="UploadFile\Article\20174261462.jpg" />
+    <Content Include="UploadFile\Article\20174261462_s.jpg" />
+    <Content Include="UploadFile\Article\20176121463.jpg" />
+    <Content Include="UploadFile\Article\20176121463_s.jpg" />
+    <Content Include="UploadFile\Article\2017672228.jpg" />
+    <Content Include="UploadFile\Article\2017672228_s.jpg" />
+    <Content Include="UploadFile\Article\2017697959.jpg" />
+    <Content Include="UploadFile\Article\2017697959_s.jpg" />
+    <Content Include="UploadFile\Article\20177254186.jpg" />
+    <Content Include="UploadFile\Article\20177254186_s.jpg" />
+    <Content Include="UploadFile\Article\20177285463.jpg" />
+    <Content Include="UploadFile\Article\20177285463_s.jpg" />
+    <Content Include="UploadFile\LawyerFirst\2017291559.png" />
+    <Content Include="UploadFile\LawyerFirst\2017297869.png" />
+    <Content Include="UploadFile\LawyerFirst\20178315005.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1792,15 +1882,27 @@
     <Content Include="Views\Home\admin.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="UploadFile\ueditor\image\20170212\6362251746535319187570278.phpclass=imageid&amp;id=1050410" />
+    <Content Include="UploadFile\ueditor\image\20170212\6362251746695099445283836.phpclass=imageid&amp;id=1050411" />
+    <Content Include="UploadFile\ueditor\image\20170212\6362251746825782689081946.phpclass=imageid&amp;id=1050408" />
+    <Content Include="UploadFile\ueditor\image\20170212\6362251746914311424410540.phpclass=imageid&amp;id=1050409" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728648538785737045319" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728648541910838801982" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728648545035931558645" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728651265435482082869" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728651268560583839532" />
+    <Content Include="UploadFile\ueditor\image\20170802\6363728651271685685596195" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\FileInput\" />
     <Folder Include="Models\" />
+    <Folder Include="UploadFile\temp\" />
+    <Folder Include="UploadFile\ueditor\image\20170125\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Hi.AutoMapperConfig\Hi.AutoMapperConfig.csproj">

@@ -73,7 +73,7 @@ namespace Hi.Frontend.Controllers
             //并用户实体保存到Session中
             Session["user_account"] = user;
             //跳转到首页
-            return RedirectToAction("index", "home");
+            return RedirectToAction("index", "home", new { area = "Admin" });
         }
 
         /// <summary>

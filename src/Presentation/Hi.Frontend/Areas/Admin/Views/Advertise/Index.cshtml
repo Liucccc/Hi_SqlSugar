@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Index.cshtml";
+}
+
+<div class="box">
+    <div class="box-body">
+        <div>
+            <label class="col-sm-2 control-label">图片：</label>
+            <div class="col-sm-4">
+                <input id="Pic1" name="Pic1" type="file" data-show-caption="true" src="">
+                <p class="help-block">支持jpg、jpeg、png格式，大小不超过2.0M</p>
+            </div>
+        </div>
+
+        <div @{if (ViewBag.advertise.Aid != 0) { @:class="hide"
+             }}>
+            <label class="col-sm-2 control-label">链接：</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Url" placeholder="链接" iflue="@ViewBag.advertise.Url">
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <button type="button" class="btn btn-info " onclick="btn_Edit()">提交</button>
+    </div>
+    <!-- /.box-footer -->
+</div>
+<script>
+    function btn_Edit() {
+        var Pic1 = $("#Pic1").attr("src");
+        var Url = $("#Url").val();
+        $.ajax({
+            url: "/Admin/Advertise/Form",
+            type: "POST",
+            data: { k: @ViewBag.advertise.Aid, Pic1: Pic1, Url: Url,Atitle:"@ViewBag.advertise.Atitle" },
+            async: false,
+            success: function (data) {
+                toastr.success(data);
+            }
+        })
+    }
+
+    function initFileInput(ctrlName, uploadUrl) {
+        var control = $('#' + ctrlName);
+        control.fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: uploadUrl,  //上传地址
+            //uploadExtraData: {path:"111"},//附加参数
+            showUpload: false, //是否显示上传按钮
+            showRemove: true,
+            dropZoneEnabled: false,
+            enctype: 'multipart/form-data',
+            showCaption: true,//是否显示标题
+            allowedPreviewTypes: ['image'],
+            allowedFileTypes: ['image'],
+            allowedFileExtensions: ['jpg', 'png'],
+            maxFileSize: 2000,
+            maxFileCount: 1,
+            initialPreviewAsData: true,
+            initialPreview: [
+                "/@ViewBag.advertise.Pic1"
+            ],
+
+
+        }).on('fileerror', function (event, data, msg) {
+                //异步上传错误结果处理
+            }).on("fileuploaded", function (event, data, previewId, index) {
+                //异步上传成功结果处理
+                console.log(data.response.filePath);
+                toastr.success(data.response.success);
+            }).on('filebatchuploaderror', function (event, data, msg) {
+                //同步上传错误结果处理
+            }).on('filepreupload', function (event, data, previewId, index) {
+                //同步上传成功结果处理
+            }).on("filebatchselected", function (event, files) {
+                //选择文件后处理事件
+                //选择文件后直接上传，不用点击上传按钮
+                //文件上传方法
+                $(this).fileinput("upload");
+            }).on("fileclear", function (event, data, msg) {
+                //点击浏览框右上角X 清空文件前响应事件
+            }).on("filecleared", function (event, data, msg) {
+                //点击浏览框右上角X 清空文件后响应事件
+            });
+    }
+
+    $(function () {
+        var path = "/Admin/FileInput/Upload";
+        initFileInput("Pic1", path);
+
+    })
+
+</script>

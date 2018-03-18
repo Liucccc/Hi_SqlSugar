@@ -1,4 +1,4 @@
-﻿<!-- Left side column. contains the logo and sidebar -->
+﻿@*<!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -163,6 +163,261 @@
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
         </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>*@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="/Content/adminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>Alexander Pierce</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        <!-- search form -->
+        @*<form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>*@
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">主导航</li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>首页管理</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/Admin/Advertise/Index?k=2" target="liuc"><i class="fa fa-circle-o"></i>中部Banner</a></li>
+                    <li><a href="/Admin/Advertise/FileInput" target="liuc"><i class="fa fa-circle-o"></i>FileInput</a></li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>Logo
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Advertise/Index?k=3" target="liuc"><i class="fa fa-circle-o"></i>婚姻法规</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=4" target="liuc"><i class="fa fa-circle-o"></i>起诉离婚</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=5" target="liuc"><i class="fa fa-circle-o"></i>子女抚养</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=6" target="liuc"><i class="fa fa-circle-o"></i>财产分割</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=7" target="liuc"><i class="fa fa-circle-o"></i>离婚案例</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=8" target="liuc"><i class="fa fa-circle-o"></i>涉外婚姻</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=9" target="liuc"><i class="fa fa-circle-o"></i>继承法规</a></li>
+                            <li><a href="/Admin/Advertise/Index?k=10" target="liuc"><i class="fa fa-circle-o"></i>继承案例</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>首页热点文章轮播图
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加轮播图</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>轮播图列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>友情链接
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加友情链接</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>友情链接列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>首席律师</span></a></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>业务范围</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 添加业务范围</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 业务范围列表</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>法律咨询</span></a></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>最新咨询</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 添加最新咨询</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 最新咨询列表</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>婚姻法规</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 添加婚姻法规</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 婚姻法规列表</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>典型案例</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 添加典型案例</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 典型案例列表</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>离婚知识</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>离婚知识
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加离婚知识</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>离婚知识列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>分类
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加分类</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>分类列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>继承知识</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>继承知识
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加继承知识</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>继承知识列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>分类
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Home/List" target="liuc"><i class="fa fa-circle-o"></i>添加分类</a></li>
+                            <li><a href="/Admin/Home/Form" target="liuc"><i class="fa fa-circle-o"></i>分类列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>律师人生</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 添加律师人生</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 律师人生列表</a></li>
+                </ul>
+            </li>
+            <li class="header">系统相关</li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>其他</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 顶部Banner</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 公告</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 二维码</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 在线咨询QQ(多个用|分隔)</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 联系我们</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 版权信息</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>系统设置</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 系统设置</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 管理员列表</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 删除垃圾文件</a></li>
+                </ul>
+            </li>
+        </ul>
+
     </section>
     <!-- /.sidebar -->
 </aside>

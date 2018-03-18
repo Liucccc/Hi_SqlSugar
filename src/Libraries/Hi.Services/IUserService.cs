@@ -10,5 +10,6 @@ namespace Hi.Services
     public interface IUserService : IService<User>
     {
         User FindByLoginName(string loginName);
+        IEnumerable<User> FindList(string loginName);
     }
 }

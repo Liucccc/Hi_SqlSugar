@@ -26,13 +26,13 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-        <header class="main-header">
+        <header class="main-header" id="header">
             <!-- Logo -->
             <a href="#" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini"><b>离婚</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg">涿州离婚律师</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -92,13 +92,13 @@
                 </div>
             </nav>
         </header>
-        @{ 
+        @{
             Html.RenderPartial("_Menu");
         }
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            <section class="content-header" id="nav">
                 <h1>
                     Dashboard
                     <small>Version 2.0</small>
@@ -109,13 +109,13 @@
                 </ol>
             </section>
             <!-- Main content -->
-            <iframe id="liuc_iframe" name="liuc" width="100%" height="100%" frameborder="0" style="min-height:800px;">
+            <iframe id="liuc_iframe" name="liuc" width="100%" height="100%" frameborder="0" style="padding:8px;" scrolling="auto" src="/Admin/Home/Main">
                 @RenderBody()
             </iframe>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
+        <footer class="main-footer" id="footer">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 2.4.0
             </div>
@@ -302,3 +302,21 @@
     <script src="/Content/adminLTE/dist/js/demo.js"></script>
 </body>
 </html>
+<script type="text/javascript" language="javascript">
+    $("#liuc_iframe").height(window.innerHeight-166);
+    //$(window).resize(function () { info_resize(); });
+    //function info_resize() {
+    //    var obj = document.getElementById("liuc_iframe");
+    //    var wh = $(window).height();
+    //    var header_h = $("#header").height();
+    //    var nav_h = $("#nav").height();
+    //    var footer_h = $("#footer").height();
+    //    var h = parseInt(wh) - parseInt(header_h) - parseInt(nav_h) - parseInt(footer_h) - 52;
+    //    if (h < 0)
+    //        h == 0;
+    //    $(obj).css("min-height", h + "px").show();
+    //}
+    //$(function () {
+    //    info_resize();
+    //})
+</script>

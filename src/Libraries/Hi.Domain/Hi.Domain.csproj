@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar, Version=4.6.4.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\sqlSugar.4.6.4.3\lib\SqlSugar.dll</HintPath>
     </Reference>
@@ -46,10 +49,36 @@
   <ItemGroup>
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\zzlh2017_adminUsers.cs" />
+    <Compile Include="Entities\zzlh2017_adminUsersLevel.cs" />
+    <Compile Include="Entities\zzlh2017_Advertise.cs" />
+    <Compile Include="Entities\zzlh2017_Article.cs" />
+    <Compile Include="Entities\zzlh2017_ArticleSort.cs" />
+    <Compile Include="Entities\zzlh2017_Info.cs" />
+    <Compile Include="Entities\zzlh2017_Init.cs" />
+    <Compile Include="Entities\zzlh2017_LawyerFirst.cs" />
+    <Compile Include="Entities\zzlh2017_LegalAdvice.cs" />
+    <Compile Include="Entities\zzlh2017_Uploadfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="T4\Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Entities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
